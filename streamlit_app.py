@@ -296,39 +296,6 @@ def compute_kpis(df: pd.DataFrame) -> dict:
     }
 
 
-def build_chart(df: pd.DataFrame, ticker: str) -> go.Figure:
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(
-        x=df["Date"], y=df["Close"],
-        name="Close", mode="lines",
-        line=dict(color="#38bdf8", width=2),
-        hovertemplate="<b>%{x|%b %d}</b><br>Close: $%{y:.2f}<extra></extra>",
-    ))
-    fig.add_trace(go.Scatter(
-        x=df["Date"], y=df["MA7"],
-        name="7-day MA", mode="lines",
-        line=dict(color="#a78bfa", width=1.5, dash="dot"),
-        hovertemplate="7d MA: $%{y:.2f}<extra></extra>",
-    ))
-    fig.add_trace(go.Scatter(
-        x=df["Date"], y=df["MA30"],
-        name="30-day MA", mode="lines",
-        line=dict(color="#fb923c", width=1.5, dash="dash"),
-        hovertemplate="30d MA: $%{y:.2f}<extra></extra>",
-    ))
-
-    # Subtle fill under close line
-    fig.add_trace(go.Scatter(
-        x=pd.concat([df["Date"], df["Date"][::-1]]),
-        y=pd.concat([df["Close"], pd.Series([df["Close"].min()] * len(df))]),
-        fill="toself",
-        fillcolor="rgba(56,189,248,0.05)",
-        line=dict(width=0),
-        showlegend=False,
-        hoverinfo="skip",
-    ))
-
 def build_metrics_table(df: pd.DataFrame) -> str:
     latest = df["Close"].iloc[-1]
     high_52 = df["Close"].max()
