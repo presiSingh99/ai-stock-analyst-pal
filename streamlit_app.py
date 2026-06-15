@@ -39,7 +39,7 @@ st.markdown("""
 <style>
   /* ── Base ── */
   [data-testid="stAppViewContainer"] {
-      background: #0b0f1a;
+      background: #0d0b1a;
       color: #e2e8f0;
   }
   [data-testid="stSidebar"] {
