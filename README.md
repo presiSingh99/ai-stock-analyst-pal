@@ -1,4 +1,4 @@
-# AI Financial Analyst Copilot
+# AI Stock Analyst Copilot
 
 ## Overview
 AI Financial Analyst Copilot is a publicly deployed AI-powered financial dashboard that combines live market data with Large Language Models to generate analyst-style insights.
