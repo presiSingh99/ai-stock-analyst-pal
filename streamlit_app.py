@@ -501,8 +501,7 @@ with st.sidebar:
             ⚙ Analyst Controls
         </div>
     """, unsafe_allow_html=True)
-
-    ticker_input = st.text_input(
+    ticker_input = st.sidebar.text_input(
         "Tickers",
         value="NVDA, AAPL, MSFT",
         help="Enter up to 5 tickers separated by commas"
@@ -515,31 +514,23 @@ with st.sidebar:
         "Time Period",
         options=["30 Days", "90 Days", "1 Year"],
     )
-
-    period_map = {
-        "30 Days": 30,
-        "90 Days": 90,
-        "1 Year": 365
-    }
+    period_map = {"30 Days": 30, "90 Days": 90, "1 Year": 365}
     period_days = period_map[period_label]
 
     st.markdown("<div style='margin-top:10px'></div>", unsafe_allow_html=True)
-
     question = st.text_area(
         "Ask the AI Analyst",
         placeholder="e.g. Is NVDA a buy right now?\nWhat does the trend suggest?",
         height=100,
     )
-
-    run_analysis = st.button(
-        "▶ Run Analysis",
-        use_container_width=True
-    )
+    run_analysis = st.button("▶  Run Analysis", use_container_width=True)
 
     st.markdown("""
         <div style='margin-top:32px;font-family:monospace;font-size:0.65rem;
                     color:#334155;line-height:1.8;'>
-            ⚠ AI summaries are illustrative and not financial advice.
+            ⚠ Sample data only.<br>
+            Replace get_stock_data() with yfinance for live data.<br><br>
+            AI summaries are illustrative and not financial advice.
         </div>
     """, unsafe_allow_html=True)
 
