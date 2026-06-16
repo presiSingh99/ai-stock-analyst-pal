@@ -543,22 +543,6 @@ with st.sidebar:
         </div>
     """, unsafe_allow_html=True)
 
-st.markdown("<div style='margin-top:10px'></div>", unsafe_allow_html=True)
-
-question = st.text_area(
-    "Ask the AI Analyst",
-    placeholder="e.g. Is NVDA a buy right now?\nWhat does the trend suggest?",
-    height=100,
-)
-
-run_analysis = st.button("▶  Run Analysis", use_container_width=True)
-
-st.markdown("""
-    <div style='margin-top:18px;font-family:monospace;font-size:0.65rem;
-                color:#334155;line-height:1.8;'>
-        ⚠ AI summaries are illustrative and not financial advice.
-    </div>
-""", unsafe_allow_html=True)
 # ─────────────────────────────────────────────
 # MAIN PANEL
 # ─────────────────────────────────────────────
