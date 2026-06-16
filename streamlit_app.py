@@ -109,9 +109,6 @@ st.markdown("""
         font-size: 0.75rem !important;
     }
 }
-</style>
-""", unsafe_allow_html=True)
-
   /* ── KPI cards ── */
   .kpi-grid {
       display: grid;
