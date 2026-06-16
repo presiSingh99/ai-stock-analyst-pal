@@ -25,7 +25,7 @@ from streamlit_autorefresh import st_autorefresh
 # PAGE CONFIG
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="AI Financial Analyst Copilot",
+    page_title="AI Stock Analyst Copilot",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -69,6 +69,23 @@ st.markdown("""
       border-bottom: 1px solid #1e3a5f;
       margin-bottom: 28px;
   }
+  @media (max-width: 768px) {
+    .copilot-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 18px;
+    }
+
+    .copilot-title {
+        font-size: 1.4rem !important;
+        line-height: 1.2;
+    }
+
+    .copilot-sub {
+        font-size: 0.75rem !important;
+    }
+}
   .copilot-title {
       font-family: 'SF Mono', 'Fira Code', monospace;
       font-size: 1.75rem;
